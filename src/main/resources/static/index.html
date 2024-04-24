@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Filmkjøp</title>
+    <style>
+        #deleteButton, #kjøpButton {
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .mainDiv{
+            padding: 10px;
+            padding-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 50%;
+            background-color: aliceblue;
+        }
+
+        #innAntall {
+            width: 30px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="mainDiv">
+<h1><strong>Bestilling av kinobilletter</strong></h1>
+<form id="formId">
+    <label for="filmId">Velg film</label>
+    <select name="film" id="filmId">
+        <option value="" disabled selected>Velg en film her</option>
+        <option value="Film1">Film1</option>
+        <option value="Film2">Film2</option>
+        <option value="Film3">Film3</option>
+        <option value="Film4">Film4</option>
+        <option value="Film5">Film5</option>
+        <option value="Film6">Film6</option>
+        <option value="Film7">Film7</option>
+        <option value="Film8">Film8</option>
+        <option value="Film9">Film9</option>
+        <option value="Film10">Film10</option>
+    </select>
+    <span id="feilInnputFilm"></span>
+    <br><br>
+
+    <label for="innAntall">Antall</label>
+    <input type="number" min="1" id="innAntall">
+    <span id="feilInnputAntall"></span>
+    <br><br>
+
+    <table>
+        <tr>
+            <td>
+                <label for="innFornavn">Fornavn</label>
+            </td>
+            <td>
+                <input type="text" id="innFornavn">
+            </td>
+            <td id="feilInputFornavn"></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="innEtternavn">Etternavn</label>
+            </td>
+            <td>
+                <input type="text" id="innEtternavn">
+            </td>
+            <td id="feilInputEtternavn"></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="innTelefonnr">Telefonnr</label>
+            </td>
+            <td>
+                <input type="text" id="innTelefonnr">
+            </td>
+            <td id="feilInputTelefonnr"></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="innEpost">Epost</label>
+            </td>
+            <td>
+                <input type="email" id="innEpost">
+            </td>
+            <td id="feilInputEpost"></td>
+        </tr>
+    </table>
+</form>
+<button id="kjøpButton" onclick="billettKjøp()">Kjøp billett</button>
+<br/>
+<p><strong>Billettene:</strong></p>
+<table style="margin-top: -10px">
+    <thead>
+    <th>Film</th>
+    <th>Antall</th>
+    <th>Fornavn</th>
+    <th>Etternavn</th>
+    <th>Telefon</th>
+    <th>Email</th>
+    </thead>
+    <tbody id="valgtFilm"></tbody>
+</table>
+<button id="deleteButton" onclick="slettFilm()">Slett alle billettene</button>
+
+<script src="js.js"></script>
+</div>
+</body>
+</html>
